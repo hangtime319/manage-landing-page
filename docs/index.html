@@ -5,41 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
 
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"/>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
     <link href="./output.css" rel="stylesheet" />
 
-    <title>Frontend Mentor | Manage landing page</title>
+    <script src="./app.js" defer></script>
 
+    <title>Frontend Mentor | Manage landing page</title>
   </head>
   <body class="text-base font-vietnam overflow-x-hidden">
-    <header class="flex items-center justify-between px-40 py-16 relative max-md:px-20 max-sm:px-10">
-      <img class="absolute z-0 md:-right-20 md:-top-16 max-md:-top-24 max-sm:hidden" src="./images/bg-tablet-pattern.svg" alt="background image">
 
-      <div class="flex items-baseline justify-between max-md:w-full z-10">
-        <img src="./images/logo.svg" alt="Logo Manage"/>
-        <img class="md:hidden self-center" src="./images/icon-hamburger.svg" alt="Menu">      
-        <img class="hidden" src="./images/icon-close.svg" alt="Close Menu"/>
+    <div id="overlay" class="fixed inset-0 z-20 max-md:bg-gradient-to-br max-md:from-gray-100/5 max-md:to-gray-700/50 hidden"></div>
+
+    <header class="flex items-center justify-between px-40 py-16 relative max-md:px-20 max-sm:px-10">
+      <img class="absolute z-0 -right-20 -top-16 max-md:-top-56 max-md:left-56 max-sm:hidden" src="./images/bg-tablet-pattern.svg" alt="background image"/>
+
+      <div class="flex items-baseline justify-between max-md:w-full z-30">
+        <img src="./images/logo.svg" alt="Logo Manage" />
+        <img id="menu_mobile" class="md:hidden self-center" src="./images/icon-hamburger.svg" alt="Menu"/>
+        <img id="close" class="hidden md:hidden" src="./images/icon-close.svg" alt="Close Menu" />
       </div>
 
-      <nav class="max-md:hidden z-10">
-        <ul class="flex items-center *:text-dark-blue *:font-bold *:px-6">
-          <li><a class="hover:text-dark-blue/50" href="">Pricing</a></li>
-          <li><a class="hover:text-dark-blue/50" href="">Product</a></li>
-          <li><a class="hover:text-dark-blue/50" href="">About Us</a></li>
-          <li><a class="hover:text-dark-blue/50" href="">Careers</a></li>
-          <li><a class="hover:text-dark-blue/50" href="">Community</a></li>
+      <nav class="hidden md:block z-50" id="menu">
+        <ul class="flex items-center *:text-dark-blue *:font-bold *:px-6 max-md:flex-col max-md:gap-8 max-md:fixed max-md:top-40 max-md:left-20 max-sm:left-8 max-md:w-[80vw] max-md:bg-white max-md:rounded-lg max-md:shadow-2xl max-md:p-8 max-sm:animate-slide-in">
+          <li><a class="hover:text-dark-blue/50 transition-colors" href="">Pricing</a></li>
+          <li><a class="hover:text-dark-blue/50 transition-colors" href="">Product</a></li>
+          <li><a class="hover:text-dark-blue/50 transition-colors" href="">About Us</a></li>
+          <li><a class="hover:text-dark-blue/50 transition-colors" href="">Careers</a></li>
+          <li><a class="hover:text-dark-blue/50 transition-colors" href="">Community</a></li>
         </ul>
       </nav>
 
       <button type="button" class="max-md:hidden py-4 px-10 text-white bg-bright-red rounded-full shadow-xl shadow-bright-red/30 hover:bg-bright-red/50 z-20">Get Started</button>
+
     </header>
 
-    <main>
+    <main class="">
       <section class="px-40 py-16 flex gap-4 max-md:flex-col-reverse max-md:items-center max-md:pt-4 max-sm:px-10">
         <article class="w-[50vw] flex flex-col justify-center gap-6 max-md:w-full">
           <h1 class="font-bold text-dark-blue text-6xl leading-tight text-balance max-md:text-5xl max-md:text-center max-sm:text-4xl max-sm:leading-snug">Bring everyone together to build better products.</h1>
@@ -57,22 +70,23 @@
         </div>
       </section>
 
-      <section class="px-40 py-16 flex gap-6 relative max-md:flex-col max-md:w-full max-md:gap-12 max-sm:px-0">
-        <article class="flex flex-col gap-6 max-md:items-center z-10">
+      <section class="px-40 py-16 flex gap-6 relative max-md:flex-col max-md:gap-12 max-md:px-10 max-sm:px-0 max-sm:w-auto">
+        <article class="flex flex-col gap-6 max-md:items-center max-md:justify-center z-10">
           <h2 class="font-bold text-dark-blue text-3xl leading-tight text-balance max-sm:text-center max-sm:leading-snug">What’s different about Manage?</h2>
 
-          <p class="text-dark-grayish-blue text-lg w-3/5 max-md:w-full max-md:text-center max-sm:text-base max-sm:leading-relaxed">
+          <p class="text-dark-grayish-blue text-lg w-3/5 max-md:w-[80vw] max-md:text-center max-sm:text-base max-sm:leading-relaxed">
             Manage provides all the functionality your team needs, without the
             complexity. Our software is tailor-made for modern digital product
             teams.
           </p>
         </article>
 
-        <article class="flex flex-col gap-10 ml-32 max-md:w-full max-md:ml-4">
+        <article class="flex flex-col gap-10 ml-32 max-md:w-[80vw] max-md:ml-4 max-sm:ml-0 max-sm:w-auto max-sm:pl-2">
           <div class="flex flex-col gap-4">
             <!-- <span>01</span> -->
-
-            <h3 class="text-base font-bold text-dark-blue before:content-['01'] before:inline-block before:mr-7 before:bg-bright-red before:text-white before:font-normal before:py-2 before:px-6 before:rounded-full max-sm:bg-gradient-to-r max-sm:from-bright-red/10 max-sm:to-bright-red/5 max-sm:rounded-s-full">Track company-wide progress</h3>
+            <h3 class="text-base font-bold text-dark-blue before:content-['01'] before:inline-block before:mr-7 before:bg-bright-red before:text-white before:font-normal before:py-2 before:px-6 before:rounded-full max-sm:bg-gradient-to-r max-sm:from-bright-red/10 max-sm:to-bright-red/5 max-sm:rounded-s-full">
+              Track company-wide progress
+            </h3>            
             <p class="text-dark-grayish-blue text-base w-3/5 text-left ml-24 max-md:w-auto max-sm:ml-0 max-sm:text-balance max-sm:leading-relaxed">
               See how your day-to-day tasks fit into the wider vision. Go from
               tracking progress at the milestone level all the way done to the
@@ -82,8 +96,9 @@
 
           <div class="flex flex-col gap-4">
             <!-- <span>02</span> -->
-
-            <h3 class="text-base font-bold text-dark-blue before:content-['02'] before:inline-block before:mr-7 before:bg-bright-red before:text-white before:font-normal before:py-2 before:px-6 before:rounded-full max-sm:bg-gradient-to-r max-sm:from-bright-red/10 max-sm:to-bright-red/5 max-sm:rounded-s-full">Advanced built-in reports</h3>
+            <h3 class="text-base font-bold text-dark-blue before:content-['02'] before:inline-block before:mr-7 before:bg-bright-red before:text-white before:font-normal before:py-2 before:px-6 before:rounded-full max-sm:bg-gradient-to-r max-sm:from-bright-red/10 max-sm:to-bright-red/5 max-sm:rounded-s-full">
+              Advanced built-in reports
+            </h3>
             <p class="text-dark-grayish-blue text-base w-3/5 text-left ml-24 max-md:w-auto max-sm:ml-0 max-sm:text-balance max-sm:leading-relaxed">
               Set internal delivery estimates and track progress toward company
               goals. Our customisable dashboard helps you build out the reports
@@ -93,8 +108,9 @@
 
           <div class="flex flex-col gap-4">
             <!-- <span>03</span> -->
-
-            <h3 class="text-base font-bold text-dark-blue before:content-['03'] before:inline-block before:mr-7 before:bg-bright-red before:text-white before:font-normal before:py-2 before:px-6 before:rounded-full max-sm:bg-gradient-to-r max-sm:from-bright-red/10 max-sm:to-bright-red/5 max-sm:rounded-s-full">Everything you need in one place</h3>
+            <h3 class="text-base font-bold text-dark-blue before:content-['03'] before:inline-block before:mr-7 before:bg-bright-red before:text-white before:font-normal before:py-2 before:px-6 before:rounded-full max-sm:bg-gradient-to-r max-sm:from-bright-red/10 max-sm:to-bright-red/5 max-sm:rounded-s-full">
+              Everything you need in one place
+            </h3>
             <p class="text-dark-grayish-blue text-base w-3/5 text-left ml-24 max-md:w-auto max-sm:ml-0 max-sm:text-balance max-sm:leading-relaxed">
               Stop jumping from one service to another to communicate, store
               files, track tasks and share documents. Manage offers an
@@ -103,86 +119,92 @@
           </div>
         </article>
 
-        <div class="z-0 absolute w-[40%] md:-left-72 md:top-80 max-sm:hidden"><img src="./images/bg-tablet-pattern.svg" alt="background image"></div>
-      </section>
-
-      <section class="mt-20 flex flex-col items-center gap-6">
-        <h2 class="font-bold text-dark-blue text-3xl leading-tight text-center">What they’ve said</h2>
-
-        <div class="mt-20 flex items-center justify-center gap-4 *:bg-dark-grayish-blue/10 w-full max-md:items-baseline max-sm:flex-col max-sm:p-4">
-          <article class="flex flex-col items-center justify-center gap-6 p-8 w-11/12 h-2/3 relative">
-            <img class="size-16 absolute -top-8" src="./images/avatar-anisha.png" alt="Anisha" />
-            <h3 class="font-bold text-dark-blue text-sm mt-5">Anisha Li</h3>
-            <p class="text-dark-grayish-blue text-sm text-center leading-6">
-              “Manage has supercharged our team’s workflow. The ability to
-              maintain visibility on larger milestones at all times keeps everyone
-              motivated.”
-            </p>
-          </article>
-
-          <article class="flex flex-col items-center justify-center gap-6 p-8 w-11/12 h-2/3 relative">
-            <img class="size-16 absolute -top-8" src="./images/avatar-ali.png" alt="Ali" />
-            <h3 class="font-bold text-dark-blue text-sm mt-5">Ali Bravo</h3>
-            <p class="text-dark-grayish-blue text-sm text-center leading-6">
-              “We have been able to cancel so many other subscriptions since using
-              Manage. There is no more cross-channel confusion and everyone is
-              much more focused.”
-            </p>
-          </article>
-
-          <article class="flex flex-col items-center justify-center gap-6 p-8 w-11/12 h-2/3 relative">
-            <img class="size-16 absolute -top-8" src="./images/avatar-richard.png" alt="Richard" />
-            <h3 class="font-bold text-dark-blue text-sm mt-5">Richard Watts</h3>
-            <p class="text-dark-grayish-blue text-sm text-center leading-6">
-              “Manage allows us to provide structure and process. It keeps us
-              organized and focused. I can’t stop recommending them to everyone I
-              talk to!”
-            </p>
-          </article>
-
-          <article class="flex flex-col items-center justify-center gap-6 p-8 w-11/12 h-2/3 relative">
-            <img class="size-16 absolute -top-8" src="./images/avatar-shanai.png" alt="Shanai" />
-            <h3 class="font-bold text-dark-blue text-sm mt-5">Shanai Gough</h3>
-            <p class="text-dark-grayish-blue text-sm text-center leading-6">
-              “Their software allows us to track, manage and collaborate on our
-              projects from anywhere. It keeps the whole team in-sync without
-              being intrusive.”
-            </p>
-          </article>          
+        <div class="z-0 absolute w-[40%] md:-left-72 md:top-80 max-md:hidden">
+          <img src="./images/bg-tablet-pattern.svg" alt="background image" />
         </div>
 
-        <div class="flex items-center justify-center gap-2">
-            <span class="size-3 border-[1px] border-bright-red bg-white rounded-full hover:bg-bright-red"></span>
-            <span class="size-3 border-[1px] border-bright-red bg-white rounded-full"></span>
-            <span class="size-3 border-[1px] border-bright-red bg-white rounded-full"></span>
-            <span class="size-3 border-[1px] border-bright-red bg-white rounded-full"></span>
+      </section>
+
+      <section class="mt-20 flex flex-col items-center justify-center gap-6 max-sm:gap-0">
+        <h2 class="font-bold text-dark-blue text-3xl leading-tight text-center">What they’ve said</h2>
+
+        <div class="mt-20">          
+          <div class="flex items-center justify-center gap-4 *:bg-neutral-200/80 w-screen max-md:flex-col max-md:p-4 *:max-md:animate-slide-in">
+            <article class="flex flex-col items-center justify-center gap-6 p-8 w-11/12 h-2/3 relative max-md:w-full" id="card-0">
+              <img class="size-16 absolute -top-8" src="./images/avatar-anisha.png" alt="Anisha"/>
+              <h3 class="font-bold text-dark-blue text-sm mt-5">Anisha Li</h3>
+              <p class="text-dark-grayish-blue text-sm text-center leading-6">
+                “Manage has supercharged our team’s workflow. The ability to
+                maintain visibility on larger milestones at all times keeps
+                everyone motivated.”
+              </p>
+            </article>
+
+            <article class="flex flex-col items-center justify-center gap-6 p-8 w-11/12 h-2/3 relative max-md:w-full max-md:hidden" id="card-1">
+              <img class="size-16 absolute -top-8" src="./images/avatar-ali.png" alt="Ali"/>
+              <h3 class="font-bold text-dark-blue text-sm mt-5">Ali Bravo</h3>
+              <p class="text-dark-grayish-blue text-sm text-center leading-6">
+                “We have been able to cancel so many other subscriptions since
+                using Manage. There is no more cross-channel confusion and
+                everyone is much more focused.”
+              </p>
+            </article>
+
+            <article class="flex flex-col items-center justify-center gap-6 p-8 w-11/12 h-2/3 relative max-md:w-full max-md:hidden" id="card-2">
+              <img class="size-16 absolute -top-8" src="./images/avatar-richard.png" alt="Richard"/>
+              <h3 class="font-bold text-dark-blue text-sm mt-5">Richard Watts</h3>
+              <p class="text-dark-grayish-blue text-sm text-center leading-6">
+                “Manage allows us to provide structure and process. It keeps us
+                organized and focused. I can’t stop recommending them to everyone
+                I talk to!”
+              </p>
+            </article>
+
+            <article class="flex flex-col items-center justify-center gap-6 p-8 w-11/12 h-2/3 relative max-md:w-full max-md:hidden" id="card-3">
+              <img class="size-16 absolute -top-8" src="./images/avatar-shanai.png" alt="Shanai"/>
+              <h3 class="font-bold text-dark-blue text-sm mt-5">Shanai Gough</h3>
+              <p class="text-dark-grayish-blue text-sm text-center leading-6">
+                “Their software allows us to track, manage and collaborate on our
+                projects from anywhere. It keeps the whole team in-sync without
+                being intrusive.”
+              </p>
+            </article>
+          </div>
+
+          <div class="flex items-center justify-center gap-2 mt-8 md:hidden" id="sliderDots">
+            <span data-slide="0" class="size-3 border-[1px] border-bright-red rounded-full cursor-pointer active transition-all duration-300 ease-in-out"></span>
+            <span data-slide="1" class="size-3 border-[1px] border-bright-red rounded-full cursor-pointer transition-all duration-300 ease-in-out"></span>
+            <span data-slide="2" class="size-3 border-[1px] border-bright-red rounded-full cursor-pointer transition-all duration-300 ease-in-out"></span>
+            <span data-slide="3" class="size-3 border-[1px] border-bright-red rounded-full cursor-pointer "></span>
+          </div>
         </div>
 
         <a class="py-4 px-10 text-white bg-bright-red rounded-full shadow-xl shadow-bright-red/30 hover:bg-bright-red/50 mt-8" href="#">Get Started</a>
       </section>
 
-      <div class="mt-32 py-20 px-40 flex items-center justify-between bg-[url('./images/bg-simplify-section-desktop.svg')] bg-bright-red/90 bg-blend-soft-light bg-no-repeat bg-left-bottom max-md:px-20">
-        <h2 class="font-bold text-white text-3xl text-left w-96">Simplify how your team works today.</h2>
-        <a class="py-4 px-10 text-bright-red bg-white rounded-full shadow-xl shadow-bright-red/30 hover:bg-white hover:text-bright-red/60" href="#">Get Started</a>
+      <div class="mt-32 py-20 px-40 flex items-center justify-between bg-[url('./images/bg-simplify-section-desktop.svg')] bg-bright-red/90 bg-blend-soft-light bg-no-repeat bg-left-bottom max-md:px-10 max-sm:bg-[url('./images/bg-simplify-section-mobile.svg')] max-sm:bg-blend-overlay max-sm:flex-col max-sm:mt-16 max-sm:gap-8">
+        <h2 class="font-bold text-white text-3xl text-left w-96 max-sm:text-center max-sm:w-9/12 max-sm:font-medium">Simplify how your team works today.</h2>
+        <a class="py-4 px-10 text-bright-red bg-white rounded-full shadow-xl shadow-bright-red/30 hover:bg-white hover:text-bright-red/60"href="#">Get Started</a>
       </div>
+
     </main>
 
     <footer class="bg-very-dark-blue flex items-center justify-between px-40 py-20 max-md:px-10 max-md:flex-col max-md:gap-16">
-      <div class="flex flex-col items-center justify-between gap-24 max-md:gap-16 max-md:">
+      <div class="flex flex-col items-center justify-between gap-24 max-md:gap-16 max-sm:flex-col-reverse max-sm:order-3">
         <img src="./images/logo-footer.svg" alt="Logo Manage" />
 
         <nav class="">
-          <ul class="flex items-center justify-between gap-2.5 max-md:gap-20">
-            <li><a href="#"><img src="./images/icon-facebook.svg" alt="facebook"/></a></li>
-            <li><a href="#"><img src="./images/icon-youtube.svg" alt="Youtube" /></a></li>
-            <li><a href="#"><img src="./images/icon-twitter.svg" alt="twitter" /></a></li>
-            <li><a href="#"><img src="./images/icon-pinterest.svg" alt="pinterest"/></a></li>
-            <li><a href="#"><img src="./images/icon-instagram.svg" alt="instagram"/></a></li>
+          <ul class="flex items-center justify-between gap-2.5 max-md:gap-20 max-sm:gap-12">
+            <li> <a href="#"><img class="max-sm:w-8" src="./images/icon-facebook.svg" alt="facebook"/></a></li>
+            <li> <a href="#"><img class="max-sm:w-8" src="./images/icon-youtube.svg" alt="Youtube"/></a></li>
+            <li> <a href="#"><img class="max-sm:w-8" src="./images/icon-twitter.svg" alt="twitter"/></a></li>
+            <li> <a href="#"><img class="max-sm:w-8" src="./images/icon-pinterest.svg" alt="pinterest"/></a></li>
+            <li> <a href="#"><img class="max-sm:w-8" src="./images/icon-instagram.svg" alt="instagram"/></a></li>
           </ul>
         </nav>
       </div>
 
-      <nav class="flex justify-between gap-20">
+      <nav class="flex justify-between gap-20 max-sm:order-2 max-sm:gap-3">
         <ul class="flex flex-col gap-5 *:text-white">
           <li><a class="hover:text-bright-red" href="">Home</a></li>
           <li><a class="hover:text-bright-red" href="">Pricing</a></li>
@@ -196,26 +218,27 @@
         </ul>
       </nav>
 
-      <div class="flex flex-col gap-14">
-        <div class="flex gap-3">
-          <form action="form" class="flex flex-col gap-3 pb-4">
-            <input class="py-4 px-8 rounded-full text-bright-red" type="text" placeholder="Updates in your inbox…" />
-            <span class="hidden ml-8 text-bright-red text-sm italic">Please insert a valid email</span>
-          </form>
-          <button type="submit" class="py-4 px-8 text-white bg-bright-red rounded-full hover:bg-gray-400 self-start">Go</button>
-        </div>
-      
+      <div class="flex flex-col gap-14 max-sm:order-1">
 
-        <p class="text-right text-dark-grayish-blue text-sm max-md:hidden">Copyright 2020. All Rights Reserved</p>
+        <div class="flex gap-3">
+          <form action="form" class="flex flex-col gap-3 pb-4" id="emailForm">
+            <input class="py-4 px-8 rounded-full text-bright-red" id="emailInput" type="email" placeholder="Updates in your inbox…"/>
+            <span class="hidden ml-8 text-bright-red text-sm italic" id="errorMessage">Please insert a valid email</span>
+          </form>
+          <button type="submit" id="submitButton" class="py-4 px-8 text-white bg-bright-red rounded-full hover:bg-gray-400 self-start">Go</button>
+        </div>
+
+        <p class="text-right text-dark-grayish-blue text-sm max-md:hidden">
+          Copyright 2020. All Rights Reserved
+        </p>
+
       </div>
-      <p class="hidden text-right text-dark-grayish-blue text-sm max-md:block">Copyright 2020. All Rights Reserved</p>
+      <p class="hidden text-right text-dark-grayish-blue text-sm max-md:block max-sm:order-4">Copyright 2020. All Rights Reserved</p>
     </footer>
 
     <div class="attribution">
       Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Leonardo Amaral</a>.
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" >Frontend Mentor</a>. Coded by <a href="#">Leonardo Amaral</a>.
     </div>
   </body>
 </html>
