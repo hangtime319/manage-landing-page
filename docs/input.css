@@ -6,6 +6,12 @@
     .active {
         @apply bg-bright-red;
     }
+    .nav-item {
+        @apply hover:text-bright-red transition-colors;
+    }
+    .menu-item {
+        @apply hover:text-dark-blue/50 transition-colors;
+    }
 }
 
 .attribution {font-size: 11px; text-align: center;}
